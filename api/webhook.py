@@ -225,7 +225,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=reply_markup
     )
 
+@app.post("/")
 @app.post("/webhook")
+@app.post("/api/webhook")
 async def webhook(request: Request):
     """Handle Telegram webhook"""
     application = get_bot_app()

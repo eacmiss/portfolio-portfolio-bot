@@ -56,12 +56,10 @@ portfolio-bot/
 │   └── bot.py          # Основной код бота
 ├── api/
 │   └── webhook.py      # Webhook для Vercel
-├── webapp/             # Мини-приложение (Next.js)
-│   ├── pages/
-│   ├── components/
-│   └── styles/
+├── pages/              # Мини-приложение (Next.js)
+├── styles/
+├── package.json
 ├── requirements.txt
-├── vercel.json
 └── .env.example
 ```
 
