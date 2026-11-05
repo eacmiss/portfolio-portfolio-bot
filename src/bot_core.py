@@ -31,19 +31,22 @@ PORTFOLIO_BOTS = [
         "name": "Crypto/NFT Инфо-бот",
         "description": "Курсы токенов, данные NFT-коллекций и цены газа",
         "features": ["Курсы токенов", "Статистика NFT-коллекций", "Уведомления о ценах газа"],
-        "status": "Доступен"
+        "status": "Доступен",
+        "url": "https://t.me/eacmiss_crypto_bot"
     },
     {
         "name": "Рассыльщик",
         "description": "Массовая рассылка сообщений для управления сообществом",
         "features": ["Отложенные сообщения", "Сегментация пользователей", "Аналитика"],
-        "status": "Доступен"
+        "status": "Доступен",
+        "url": "https://t.me/eacmiss_broadcast_bot"
     },
     {
         "name": "Сокращатель ссылок",
         "description": "Управление ссылками и отслеживание кликов",
         "features": ["Свои алиасы", "Аналитика кликов", "QR-коды"],
-        "status": "Доступен"
+        "status": "Доступен",
+        "url": "https://t.me/eacmiss_shortener_bot"
     }
 ]
 
@@ -126,6 +129,7 @@ async def show_bot_details(update, context):
     features_text = "\n".join([f"• {f}" for f in bot['features']])
 
     keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🤖 Открыть бота", url=bot['url'])],
         [InlineKeyboardButton("🔙 К проектам", callback_data="portfolio")],
         [InlineKeyboardButton("🏠 Главное меню", callback_data="back_main")]
     ])

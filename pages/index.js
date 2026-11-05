@@ -33,19 +33,22 @@ const PORTFOLIO_BOTS = [
     name: 'Crypto/NFT Инфо-бот',
     description: 'Курсы токенов, данные NFT-коллекций и цены газа',
     features: ['Курсы токенов', 'Статистика NFT-коллекций', 'Уведомления о ценах газа'],
-    status: 'Доступен'
+    status: 'Доступен',
+    url: 'https://t.me/eacmiss_crypto_bot'
   },
   {
     name: 'Рассыльщик',
     description: 'Массовая рассылка сообщений для управления сообществом',
     features: ['Отложенные сообщения', 'Сегментация пользователей', 'Аналитика'],
-    status: 'Доступен'
+    status: 'Доступен',
+    url: 'https://t.me/eacmiss_broadcast_bot'
   },
   {
     name: 'Сокращатель ссылок',
     description: 'Управление ссылками и отслеживание кликов',
     features: ['Свои алиасы', 'Аналитика кликов', 'QR-коды'],
-    status: 'Доступен'
+    status: 'Доступен',
+    url: 'https://t.me/eacmiss_shortener_bot'
   }
 ];
 
@@ -114,6 +117,9 @@ export default function Home() {
             {selectedBot.features.map((f, i) => <li key={i}>{f}</li>)}
           </ul>
           <p className="status">Статус: {selectedBot.status}</p>
+          <button className="btn neon-btn" onClick={() => window.open(selectedBot.url, '_blank')}>
+            🤖 Открыть бота
+          </button>
           <button className="btn neon-btn" onClick={() => setSelectedBot(null)}>← К проектам</button>
         </div>
       ) : (
