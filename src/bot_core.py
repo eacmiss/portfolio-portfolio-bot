@@ -52,7 +52,7 @@ def get_webapp_url():
 
 def main_keyboard():
     return InlineKeyboardMarkup([
-        [InlineKeyboardButton("🎮 Зайди сюда, чтобы играть", web_app=WebAppInfo(url=get_webapp_url()))],
+        [InlineKeyboardButton("🚀 Открыть, чтобы посмотреть портфолио", web_app=WebAppInfo(url=get_webapp_url()))],
         [InlineKeyboardButton("❓ Вопросы и ответы", callback_data="qa_menu")],
         [InlineKeyboardButton("🤖 Мои проекты", callback_data="portfolio")],
         [InlineKeyboardButton("💬 Связаться с разработчиком", callback_data="contact")]
@@ -60,13 +60,13 @@ def main_keyboard():
 
 START_TEXT = (
     "👋 Привет! Это мой бот-портфолио — здесь я показываю свои работы по разработке Telegram-ботов.\n\n"
-    "🎮 Зайди сюда, чтобы играть — жми кнопку ниже, откроется мини-приложение!\n\n"
+    "📂 Открой, чтобы посмотреть портфолио — жми кнопку ниже, откроется мини-приложение!\n\n"
     "Также можешь посмотреть проекты, почитать ответы на вопросы или связаться со мной."
 )
 
 BACK_TEXT = (
     "👋 Привет! Это мой бот-портфолио — здесь я показываю свои работы по разработке Telegram-ботов.\n\n"
-    "🎮 Зайди сюда, чтобы играть — жми кнопку ниже, откроется мини-приложение!"
+    "📂 Открой, чтобы посмотреть портфолио — жми кнопку ниже, откроется мини-приложение!"
 )
 
 async def start(update, context):
