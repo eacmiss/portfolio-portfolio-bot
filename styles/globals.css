@@ -7,57 +7,48 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
+  background: #000000;
 }
 
-/* Light Theme */
-.light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f5;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --accent: #0088cc;
-  --card-bg: #ffffff;
-  --border: #e0e0e0;
-}
-
-/* Dark Theme */
-.dark {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
+/* Чёрная неоновая тема */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
   --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --accent: #3390ec;
-  --card-bg: #2d2d2d;
-  --border: #404040;
+  --text-secondary: #a0a0a0;
+  --accent: #00ffff;
+  --accent-2: #a855f7;
+  --card-bg: #0d0d0d;
+  --border: #1f1f1f;
 }
 
 .app {
   min-height: 100vh;
-  background: var(--bg-primary);
+  background:
+    radial-gradient(ellipse at top, rgba(0, 255, 255, 0.06), transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.06), transparent 50%),
+    #000000;
   color: var(--text-primary);
-  transition: all 0.3s ease;
 }
 
-header {
+.neon-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: var(--bg-secondary);
+  background: rgba(10, 10, 10, 0.8);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-header h1 {
+.neon-logo {
   font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 main {
@@ -69,14 +60,20 @@ main {
   margin: 0 auto;
 }
 
-.container h1 {
-  margin-bottom: 1rem;
+.neon-title {
+  margin-bottom: 0.5rem;
   font-size: 1.5rem;
+  color: var(--text-primary);
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+.neon-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
 }
 
 .container p {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
 }
 
 .card-grid {
@@ -84,26 +81,28 @@ main {
   gap: 1rem;
 }
 
-.card {
+.neon-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
-.card:hover {
+.neon-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25), 0 0 40px rgba(0, 255, 255, 0.1);
 }
 
-.card h3 {
+.neon-card h3 {
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
+  color: var(--accent);
 }
 
-.card p {
+.neon-card p {
   color: var(--text-secondary);
   margin: 0;
 }
@@ -115,21 +114,13 @@ main {
 }
 
 .qa-item, .bot-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.qa-item:hover, .bot-card:hover {
-  background: var(--bg-secondary);
 }
 
 .qa-item h3, .bot-card h3 {
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .qa-item span, .bot-card span {
@@ -138,14 +129,12 @@ main {
 }
 
 .qa-answer {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.5rem;
 }
 
 .qa-answer h3 {
   margin-bottom: 1rem;
+  color: var(--accent);
 }
 
 .answer-text {
@@ -155,19 +144,19 @@ main {
 }
 
 .bot-details {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.5rem;
 }
 
 .bot-details h2 {
   margin-bottom: 0.75rem;
+  color: var(--accent-2);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
 }
 
 .bot-details h3 {
   margin: 1rem 0 0.5rem;
   font-size: 1rem;
+  color: var(--accent);
 }
 
 .bot-details ul {
@@ -189,6 +178,7 @@ main {
   color: var(--accent);
   font-weight: 500;
   margin-top: 1rem;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
 }
 
 .back-btn, .btn {
@@ -200,9 +190,21 @@ main {
   cursor: pointer;
   font-size: 0.95rem;
   margin-top: 1rem;
-  transition: background 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .back-btn:hover, .btn:hover {
-  background: var(--border);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+}
+
+.neon-btn {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.neon-btn:hover {
+  background: rgba(0, 255, 255, 0.08);
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
 }

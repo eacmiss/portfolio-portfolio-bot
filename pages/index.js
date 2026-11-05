@@ -3,74 +3,74 @@ import { useState } from 'react';
 const QA_DATA = [
   {
     id: 'cost',
-    question: 'How much does bot development cost?',
-    answer: 'Bot development costs vary based on complexity:\n\n• Simple bot: $100-300\n• Medium complexity: $300-800\n• Advanced features: $800-2000+\n\nContact @eacmiss for a personalized quote!'
+    question: 'Сколько стоит разработка бота?',
+    answer: 'Стоимость зависит от конкретного бота 🤖\n\nНапиши мне в личку @eacmiss — расскажи, что нужно, и я назову точную цену!'
   },
   {
     id: 'time',
-    question: 'How long does it take to develop a bot?',
-    answer: 'Development timeline depends on the project:\n\n• Simple bot: 1-3 days\n• Medium complexity: 1-2 weeks\n• Advanced features: 2-4 weeks\n\nRush delivery is available at additional cost.'
+    question: 'Сколько времени занимает разработка?',
+    answer: 'Обычно разработка занимает 1–3 дня ⚡\n\nТочные сроки зависят от сложности проекта — пиши @eacmiss, обсудим!'
   },
   {
     id: 'payment',
-    question: 'What payment methods do you accept?',
-    answer: 'I accept:\n\n• Cryptocurrency (USDT, BTC, ETH)\n• Bank transfers\n• PayPal\n\n50% upfront, 50% upon completion.'
+    question: 'Какие способы оплаты вы принимаете?',
+    answer: 'Принимаю:\n\n• Криптовалюту (USDT, BTC, ETH)\n• Банковские переводы\n• PayPal\n\n50% предоплата, 50% по завершении.'
   },
   {
     id: 'support',
-    question: 'Do you provide post-launch support?',
-    answer: 'Yes! I provide:\n\n• 30 days free support after launch\n• Ongoing maintenance packages available\n• Bug fixes and minor updates included'
+    question: 'Есть ли поддержка после запуска?',
+    answer: 'Да! Предоставляю:\n\n• 30 дней бесплатной поддержки после запуска\n• Пакеты постоянного обслуживания\n• Исправление ошибок и мелкие обновления включены'
   },
   {
     id: 'tech',
-    question: 'What technologies do you use?',
-    answer: 'I work with:\n\n• Python (Telegram Bot API, aiogram, python-telegram-bot)\n• Node.js (telegraf)\n• Web technologies for mini apps\n• Databases (PostgreSQL, MongoDB, Redis)'
+    question: 'Какие технологии вы используете?',
+    answer: 'Работаю с:\n\n• Python (Telegram Bot API, aiogram, python-telegram-bot)\n• Node.js (telegraf)\n• Веб-технологии для мини-приложений\n• Базы данных (PostgreSQL, MongoDB, Redis)'
   }
 ];
 
 const PORTFOLIO_BOTS = [
   {
-    name: 'Crypto/NFT Token Info',
-    description: 'Instant token prices, NFT collection data, and gas prices',
-    features: ['Token price lookup', 'NFT collection stats', 'Gas price alerts'],
-    status: 'Available'
+    name: 'Crypto/NFT Инфо-бот',
+    description: 'Курсы токенов, данные NFT-коллекций и цены газа',
+    features: ['Курсы токенов', 'Статистика NFT-коллекций', 'Уведомления о ценах газа'],
+    status: 'Доступен'
   },
   {
-    name: 'Broadcast Messenger',
-    description: 'Mass messaging tool for community management',
-    features: ['Scheduled messages', 'User segmentation', 'Analytics'],
-    status: 'Available'
+    name: 'Рассыльщик',
+    description: 'Массовая рассылка сообщений для управления сообществом',
+    features: ['Отложенные сообщения', 'Сегментация пользователей', 'Аналитика'],
+    status: 'Доступен'
   },
   {
-    name: 'URL Shortener',
-    description: 'Link management and click tracking service',
-    features: ['Custom aliases', 'Click analytics', 'QR codes'],
-    status: 'Available'
+    name: 'Сокращатель ссылок',
+    description: 'Управление ссылками и отслеживание кликов',
+    features: ['Свои алиасы', 'Аналитика кликов', 'QR-коды'],
+    status: 'Доступен'
   }
 ];
 
-export default function Home({ theme, toggleTheme }) {
+export default function Home() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedQA, setSelectedQA] = useState(null);
   const [selectedBot, setSelectedBot] = useState(null);
 
   const renderHome = () => (
     <div className="container">
-      <h1>👋 Welcome</h1>
-      <p>I showcase my Telegram bot development work. Explore my projects, check FAQs, or contact me directly.</p>
-      
+      <h1 className="neon-title">👋 Привет!</h1>
+      <p className="neon-subtitle">Это мой бот-портфолио — здесь я показываю свои работы по разработке Telegram-ботов.</p>
+
       <div className="card-grid">
-        <div className="card" onClick={() => setActiveTab('qa')}>
-          <h3>❓ Q&A</h3>
-          <p>Frequently asked questions about bot development</p>
+        <div className="card neon-card" onClick={() => setActiveTab('qa')}>
+          <h3>❓ Вопросы и ответы</h3>
+          <p>Частые вопросы о разработке ботов</p>
         </div>
-        <div className="card" onClick={() => setActiveTab('portfolio')}>
-          <h3>🤖 Portfolio</h3>
-          <p>View my bot projects</p>
+        <div className="card neon-card" onClick={() => setActiveTab('portfolio')}>
+          <h3>🤖 Проекты</h3>
+          <p>Посмотреть моих ботов</p>
         </div>
-        <div className="card" onClick={() => window.open('https://t.me/eacmiss', '_blank')}>
-          <h3>💬 Contact</h3>
-          <p>Message @eacmiss</p>
+        <div className="card neon-card" onClick={() => window.open('https://t.me/eacmiss', '_blank')}>
+          <h3>💬 Связаться</h3>
+          <p>Написать @eacmiss</p>
         </div>
       </div>
     </div>
@@ -78,21 +78,21 @@ export default function Home({ theme, toggleTheme }) {
 
   const renderQA = () => (
     <div className="container">
-      <button className="back-btn" onClick={() => setActiveTab('home')}>← Back</button>
-      <h1>❓ Frequently Asked Questions</h1>
-      
+      <button className="back-btn" onClick={() => setActiveTab('home')}>← Назад</button>
+      <h1 className="neon-title">❓ Частые вопросы</h1>
+
       {selectedQA ? (
-        <div className="qa-answer">
+        <div className="qa-answer neon-card">
           <h3>{selectedQA.question}</h3>
           <p className="answer-text">{selectedQA.answer}</p>
-          <button className="btn" onClick={() => setSelectedQA(null)}>← Back to Questions</button>
+          <button className="btn neon-btn" onClick={() => setSelectedQA(null)}>← К вопросам</button>
         </div>
       ) : (
         <div className="qa-list">
           {QA_DATA.map(qa => (
-            <div key={qa.id} className="qa-item" onClick={() => setSelectedQA(qa)}>
+            <div key={qa.id} className="qa-item neon-card" onClick={() => setSelectedQA(qa)}>
               <h3>{qa.question}</h3>
-              <span>Click to view answer →</span>
+              <span>Нажми, чтобы увидеть ответ →</span>
             </div>
           ))}
         </div>
@@ -102,27 +102,27 @@ export default function Home({ theme, toggleTheme }) {
 
   const renderPortfolio = () => (
     <div className="container">
-      <button className="back-btn" onClick={() => setActiveTab('home')}>← Back</button>
-      <h1>🤖 My Bot Portfolio</h1>
-      
+      <button className="back-btn" onClick={() => setActiveTab('home')}>← Назад</button>
+      <h1 className="neon-title">🤖 Мои проекты-боты</h1>
+
       {selectedBot ? (
-        <div className="bot-details">
+        <div className="bot-details neon-card">
           <h2>{selectedBot.name}</h2>
           <p>{selectedBot.description}</p>
-          <h3>Features:</h3>
+          <h3>Возможности:</h3>
           <ul>
             {selectedBot.features.map((f, i) => <li key={i}>{f}</li>)}
           </ul>
-          <p className="status">Status: {selectedBot.status}</p>
-          <button className="btn" onClick={() => setSelectedBot(null)}>← Back to Portfolio</button>
+          <p className="status">Статус: {selectedBot.status}</p>
+          <button className="btn neon-btn" onClick={() => setSelectedBot(null)}>← К проектам</button>
         </div>
       ) : (
         <div className="bot-list">
           {PORTFOLIO_BOTS.map((bot, i) => (
-            <div key={i} className="bot-card" onClick={() => setSelectedBot(bot)}>
+            <div key={i} className="bot-card neon-card" onClick={() => setSelectedBot(bot)}>
               <h3>{bot.name}</h3>
               <p>{bot.description}</p>
-              <span className="status">Status: {bot.status}</span>
+              <span className="status">Статус: {bot.status}</span>
             </div>
           ))}
         </div>
@@ -132,13 +132,10 @@ export default function Home({ theme, toggleTheme }) {
 
   return (
     <div className="app">
-      <header>
-        <h1>Portfolio Bot</h1>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'light' ? '🌙' : '☀️'}
-        </button>
+      <header className="neon-header">
+        <h1 className="neon-logo">⚡ Портфолио Бот</h1>
       </header>
-      
+
       <main>
         {activeTab === 'home' && renderHome()}
         {activeTab === 'qa' && renderQA()}
